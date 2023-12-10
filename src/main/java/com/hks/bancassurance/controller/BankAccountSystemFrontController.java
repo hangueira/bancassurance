@@ -26,6 +26,8 @@ public class BankAccountSystemFrontController {
         return createReponseTransForm(ifId, requestJsonString);
     }
 
+    // todo send function
+
     private TransForm createReponseTransForm(String ifId, String requestJsonString) {
         TransForm transForm;
         switch (ifId) {

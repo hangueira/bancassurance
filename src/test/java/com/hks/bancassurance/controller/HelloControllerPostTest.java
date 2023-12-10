@@ -45,5 +45,6 @@ class HelloControllerPostTest {
 
         // then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
+
     }
 }
