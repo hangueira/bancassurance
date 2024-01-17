@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public abstract class BankAccountInterfaceFactory<T, K> {
 
-    public ResponseDto createResponseForm(RequestDto requestDto) {
+    public ResponseDto<K> createResponseForm(RequestDto<T> requestDto) {
 
         ResponseHeaderDto header = ResponseHeaderDto.builder()
                 .systemName("bancassurance")
@@ -18,13 +18,12 @@ public abstract class BankAccountInterfaceFactory<T, K> {
         ResponseMessageDto message = ResponseMessageDto.builder()
                 .returnCode("success")
                 .build();
-        ResponseDto<Object> build = ResponseDto.builder()
+        return ResponseDto.<K>builder()
                 .HEAD(header)
                 .MSG(message)
-                .DATA(createData((T) requestDto.DATA()))
+                .DATA(createData(requestDto))
                 .build();
-        return build;
     }
 
-    public abstract K createData(T data);
+    public abstract K createData(RequestDto<T> requestDto);
 }

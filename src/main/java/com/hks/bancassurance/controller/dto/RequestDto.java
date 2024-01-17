@@ -1,5 +1,7 @@
 package com.hks.bancassurance.controller.dto;
 
 
-public record RequestDto<T>(RequestHeaderDto HEAD, T DATA) {
+import java.util.Map;
+
+public record RequestDto<T>(RequestHeaderDto HEAD, Map<String, Object> DATA) {
 }
