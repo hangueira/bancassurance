@@ -1,4 +1,4 @@
-package com.hks.bancassurance.controller.dto;
+package com.hks.bancassurance.controller.dto.internal;
 
 import lombok.Builder;
 
